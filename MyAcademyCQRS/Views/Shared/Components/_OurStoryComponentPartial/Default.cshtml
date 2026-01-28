@@ -1,0 +1,94 @@
+﻿@model List<MyAcademyCQRS.Entities.Product>
+
+<style>
+    .shop-block-one .image-box img {
+        width: 100%;
+        height: 250px; 
+        object-fit: cover;
+        display: block;
+    }
+
+    .shop-block-one .image-box {
+        overflow: hidden;
+        border-radius: 8px 8px 0 0;
+    }
+</style>
+
+<section class="shop-section" style="background-image: url(/Bagery/assets/images/background/shop-1.jpg);">
+    <div class="auto-container">
+        <div class="sec-title">
+            <p>Mağazamız</p>
+            <h2>Tüm Lezzetli <br />Ürünlerimiz. (@Model.Count)</h2>
+        </div>
+        <div class="four-item-carousel owl-carousel owl-theme owl-dots-none nav-style-one">
+            @foreach (var item in Model)
+            {
+                <div class="shop-block-one">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <img src="@item.ImageUrl" alt="@item.Name">
+                        </figure>
+                        <div class="lower-content">
+                            <span class="price-box">₺@item.Price.ToString("0.##")</span>
+                            <h3><a href="#">@item.Name</a></h3>
+                            <ul class="rating clearfix">
+                                <li><i class="icon-Star"></i></li>
+                                <li><i class="icon-Star"></i></li>
+                                <li><i class="icon-Star"></i></li>
+                                <li><i class="icon-Star"></i></li>
+                                <li><i class="icon-Star"></i></li>
+                            </ul>
+                            <div class="cart-btn">
+                                <a href="javascript:void(0)"
+                                   class="theme-btn-two btn-add-basket"
+                                   data-id="@item.Id">Sepete Ekle</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(document).off('click', '.btn-add-basket').on('click', '.btn-add-basket', function (e) {
+            e.preventDefault();
+
+            var $btn = $(this);
+            if($btn.hasClass('disabled')) return;
+            $btn.addClass('disabled');
+
+            var productId = $btn.data('id');
+
+            $.ajax({
+                url: '/Basket/AddToBasket',
+                type: 'POST',
+                data: { id: productId },
+                success: function (response) {
+                    if (response.success) {
+                        $('.basket-count, .basket-count-nav').text(response.count);
+
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true
+                        });
+
+                        Toast.fire({
+                            icon: 'success',
+                            title: 'Ürün sepete eklendi!'
+                        });
+                    }
+                },
+                complete: function() {
+                    $btn.removeClass('disabled');
+                }
+            });
+        });
+    });
+</script>

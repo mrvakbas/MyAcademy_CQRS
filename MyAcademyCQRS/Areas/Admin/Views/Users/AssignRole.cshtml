@@ -1,0 +1,56 @@
+﻿@model List<AssignRoleDto>
+@{
+    ViewData["Title"] = "AssignRole";
+	Layout = "~/Areas/Admin/Views/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card border-0 shadow-sm">
+            <div class="card-header bg-white py-3">
+                <h5 class="m-0 fw-bold text-dark">
+                    <i class="fas fa-user-shield me-2 text-primary"></i>Rol Atama İşlemi
+                </h5>
+            </div>
+            <div class="card-body p-4">
+                <div class="mb-4 d-flex align-items-center p-3 rounded-3" style="background-color: #f8fafc; border: 1px solid #e2e8f0;">
+                    <img src="https://ui-avatars.com/api/?name=@ViewBag.fullName&background=6366f1&color=fff" class="rounded-circle me-3" width="45" />
+                    <div>
+                        <h6 class="m-0 fw-bold text-dark">@ViewBag.fullName</h6>
+                        <small class="text-muted text-uppercase fw-bold" style="font-size: 0.7rem;">Kullanıcı Yetkilendirme</small>
+                    </div>
+                </div>
+
+                <form method="post">
+                    <div class="list-group list-group-flush border rounded-3 overflow-hidden">
+                        @for (int i = 0; i < Model.Count; i++)
+                        {
+                            <label class="list-group-item list-group-item-action py-3 d-flex align-items-center cursor-pointer" style="cursor:pointer;">
+                                <input type="hidden" asp-for="@Model[i].RoleId" />
+                                <input type="hidden" asp-for="@Model[i].RoleName" />
+                                <input type="hidden" asp-for="@Model[i].UserId" />
+                                
+                                <div class="form-check form-switch m-0">
+                                    <input type="checkbox" asp-for="@Model[i].RoleExists" class="form-check-input border-2 shadow-none" 
+                                           style="width: 2.5em; height: 1.25em; cursor:pointer;" />
+                                </div>
+                                <div class="ms-3">
+                                    <span class="fw-semibold text-dark">@Model[i].RoleName</span>
+                                </div>
+                            </label>
+                        }
+                    </div>
+
+                    <div class="d-flex gap-2 pt-4">
+                        <button type="submit" class="btn btn-primary px-4 py-2 shadow-none" style="border-radius: 10px; font-weight: 600;">
+                            <i class="fas fa-check-circle me-2"></i>Değişiklikleri Kaydet
+                        </button>
+                        <a href="/Admin/Users/Index" class="btn btn-outline-secondary px-4 py-2 shadow-none" style="border-radius: 10px;">
+                            Vazgeç
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

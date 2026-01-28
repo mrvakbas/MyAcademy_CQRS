@@ -1,0 +1,64 @@
+﻿@using MyAcademyCQRS.CQRSPattern.Results.PromotionResults
+@model List<GetPromotionQueryResult>
+
+
+<section class="promotion-section sec-pad" style="background-image: url(/Bagery/assets/images/background/promotion-1.jpg);">
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p>Kampanyalar</p>
+            <h2>Yaz Fırsatlarını ve <br />Tüm Lezzetleri Keşfedin</h2>
+        </div>
+
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            var item = Model[i];
+            
+            if (i % 2 == 0)
+            {
+                <div class="inner-box mb-50 wow slideInRight animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="row clearfix">
+                        <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                            <div class="image-box clearfix mr-10">
+                                <figure class="image"><img src="@item.ImageUrl" alt="Tanıtım"></figure>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                            <div class="content-box ml-10">
+                                <div class="price-box" style="background-image: url(/Bagery/assets/images/icons/icon-bg-4.png);">
+                                    <span>₺@item.Price</span>
+                                    <p>Sadece</p>
+                                </div>
+                                <h3>@Html.Raw(item.Title)</h3>
+                                <p>@item.Description</p>
+                                <div class="btn-box"><a href="/Shop/Order/@item.Id" class="theme-btn-two">Hemen Sipariş Ver</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="inner-box mb-50 wow slideInLeft animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="row clearfix">
+                        <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                            <div class="content-box mr-10">
+                                <div class="price-box" style="background-image: url(/Bagery/assets/images/icons/icon-bg-4.png);">
+                                    <span>₺@item.Price</span>
+                                    <p>Sadece</p>
+                                </div>
+                                <h3>@Html.Raw(item.Title)</h3>
+                                <p>@item.Description</p>
+                                <div class="btn-box"><a href="/Shop/Order/@item.Id" class="theme-btn-two">Hemen Sipariş Ver</a></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                            <div class="image-box ml-10">
+                                <figure class="image"><img src="@item.ImageUrl" alt="Tanıtım"></figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</section>

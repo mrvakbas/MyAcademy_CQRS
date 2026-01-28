@@ -1,0 +1,42 @@
+﻿@model AppRole
+@{
+    ViewData["Title"] = "CreateRole";
+	Layout = "~/Areas/Admin/Views/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card border-0 shadow-sm">
+            <div class="card-header bg-white py-3">
+                <h5 class="m-0 fw-bold text-dark">
+                    <i class="fas fa-shield-alt me-2 text-primary"></i>Yeni Rol Tanımla
+                </h5>
+            </div>
+            <div class="card-body p-4">
+                <form method="post">
+                    <div class="mb-4">
+                        <label asp-for="Name" class="form-label fw-semibold text-muted">Rol Adı</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-light border-2 border-end-0" style="border-radius: 10px 0 0 10px;">
+                                <i class="fas fa-user-tag text-muted"></i>
+                            </span>
+                            <input type="text" asp-for="Name" class="form-control form-control-lg border-2 shadow-none" 
+                                   placeholder="Örn: Editör, Kurye" required 
+                                   style="border-radius: 0 10px 10px 0; font-size: 0.95rem;" />
+                        </div>
+                        <div class="form-text mt-2">Sistemdeki yetki seviyesini belirleyecek bir isim giriniz.</div>
+                    </div>
+
+                    <div class="d-flex gap-2 pt-2">
+                        <button type="submit" class="btn btn-primary px-4 py-2 shadow-none" style="border-radius: 8px; font-weight: 600;">
+                            <i class="fas fa-save me-2"></i>Rolü Kaydet
+                        </button>
+                        <a href="/Admin/Role/Index" class="btn btn-outline-secondary px-4 py-2 shadow-none" style="border-radius: 8px;">
+                            İptal
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

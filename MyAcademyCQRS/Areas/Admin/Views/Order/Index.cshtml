@@ -1,0 +1,82 @@
+﻿@model List<MyAcademyCQRS.Entities.Order>
+@{
+    ViewData["Title"] = "Siparişler";
+    Layout = "~/Areas/Admin/Views/_AdminLayout.cshtml";
+}
+
+
+<div class="card border-0 shadow-sm">
+    <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+        <h5 class="m-0 fw-bold text-dark">
+            <i class="fas fa-shopping-cart me-2 text-primary"></i>Sipariş Yönetimi
+        </h5>
+        <span class="badge bg-soft-secondary text-muted px-3 py-2 rounded-pill">
+            Toplam @Model.Count Sipariş
+        </span>
+    </div>
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="bg-light">
+                    <tr>
+                        <th class="px-4 py-3" style="width: 80px;">#</th>
+                        <th class="py-3">Müşteri</th>
+                        <th class="py-3">Tarih</th>
+                        <th class="py-3">Toplam Tutar</th>
+                        <th class="py-3 text-center">Durum</th>
+                        <th class="py-3 text-end px-4">İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="px-4 fw-bold text-muted">#@item.OrderID</td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-light rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 35px; height: 35px;">
+                                        <i class="fas fa-user text-secondary small"></i>
+                                    </div>
+                                    <span class="fw-bold text-dark">@item.CustomerName</span>
+                                </div>
+                            </td>
+                            <td class="text-muted">@item.OrderDate.ToShortDateString()</td>
+                            <td class="fw-bold text-dark">@item.TotalAmount.ToString("C2")</td>
+                            <td class="text-center">
+                                @if (item.IsCompleted)
+                                {
+                                    <span class="badge rounded-pill bg-soft-success text-success px-3 py-2" style="background-color: #dcfce7;">
+                                        <i class="fas fa-check-circle me-1"></i> Tamamlandı
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="badge rounded-pill bg-soft-warning text-warning px-3 py-2" style="background-color: #fef9c3;">
+                                        <i class="fas fa-clock me-1"></i> Bekliyor
+                                    </span>
+                                }
+                            </td>
+                            <td class="text-end px-4">
+                                <a href="/Admin/Order/ChangeStatus/@item.OrderID"
+                                   class="btn @(item.IsCompleted ? "btn-outline-warning" : "btn-outline-success") btn-sm rounded-pill px-3 shadow-none me-1">
+                                    @if (item.IsCompleted)
+                                    {
+                                        <i class="fas fa-undo me-1"></i>
+                                                                    }
+                                    else
+                                    {
+                                        <i class="fas fa-check me-1"></i>
+                                                                }
+                                </a>
+                                <a href="/Admin/Order/OrderDetail/@item.OrderID" 
+                                   class="btn btn-outline-info btn-sm rounded-pill px-4 shadow-none">
+                                   <i class="fas fa-search me-1"></i> Detaylar
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,335 @@
+﻿@using MyAcademyCQRS.Entities
+@model List<MyAcademyCQRS.CQRSPattern.Results.PromotionResults.GetPromotionQueryResult>
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Areas/Admin/Views/_AdminLayout.cshtml";
+}
+
+<style>
+    .custom-card {
+        border: none;
+        border-radius: 12px;
+        transition: 0.3s;
+        background: #ffffff;
+    }
+
+    .stat-card {
+        border-radius: 15px;
+        border: none;
+        overflow: hidden;
+    }
+
+    .stat-icon-box {
+        width: 45px;
+        height: 45px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .badge-soft-success {
+        background-color: #e1fcef;
+        color: #1cc88a;
+        padding: 5px 10px;
+        border-radius: 8px;
+    }
+
+    .activity-feed {
+        padding: 15px;
+    }
+
+    .feed-item {
+        position: relative;
+        padding-bottom: 20px;
+        padding-left: 30px;
+        border-left: 2px solid #e9ecef;
+    }
+
+        .feed-item:last-child {
+            border-left: none;
+        }
+
+        .feed-item::after {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #4e73df;
+            border: 2px solid #fff;
+        }
+
+    .module-badge {
+        font-size: 0.65rem;
+        padding: 2px 8px;
+        border-radius: 5px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .mod-contact {
+        background-color: #f3e5f5;
+        color: #7b1fa2;
+    }
+    .mod-product {
+        background-color: #e3f2fd;
+        color: #0d47a1;
+    }
+    .mod-order {
+        background-color: #e8f5e9;
+        color: #2e7d32;
+    }
+
+    .mod-category {
+        background-color: #fff8e1;
+        color: #ff8f00;
+    }
+
+    .mod-promotion {
+        background-color: #fff1f0;
+        color: #f5222d;
+    }
+</style>
+
+<div class="container-fluid pt-4">
+    <style>
+        .stat-card {
+            border: none;
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+            .stat-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+            }
+
+            .stat-card::before {
+                content: "";
+                position: absolute;
+                top: -50%;
+                right: -50%;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+                transform: rotate(45deg);
+                z-index: -1;
+                transition: 0.5s;
+            }
+
+            .stat-card:hover::before {
+                top: -20%;
+                right: -20%;
+            }
+
+        .stat-icon-wrapper {
+            width: 55px;
+            height: 55px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+        }
+
+        .card-trend {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.5);
+        }
+    </style>
+
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card stat-card shadow-sm h-100 p-4 border-start border-primary border-5">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <p class="text-muted small text-uppercase fw-bold mb-1">Kampanyalar</p>
+                        <h2 class="mb-0 fw-bold">@ViewBag.PromotionCount</h2>
+                       
+                    </div>
+                    <div class="stat-icon-wrapper bg-primary text-white shadow-primary">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card stat-card shadow-sm h-100 p-4 border-start border-info border-5">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <p class="text-muted small text-uppercase fw-bold mb-1">Ürünler</p>
+                        <h2 class="mb-0 fw-bold">@ViewBag.ProductCount</h2>
+                       
+                    </div>
+                    <div class="stat-icon-wrapper bg-info text-white shadow-info">
+                        <i class="fas fa-box"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card stat-card shadow-sm h-100 p-4 border-start border-success border-5">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <p class="text-muted small text-uppercase fw-bold mb-1">Siparişler</p>
+                        <h2 class="mb-0 fw-bold">@ViewBag.OrderCount</h2>
+                       
+                    </div>
+                    <div class="stat-icon-wrapper bg-success text-white shadow-success">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card stat-card shadow-sm h-100 p-4 border-start border-warning border-5">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <p class="text-muted small text-uppercase fw-bold mb-1">Sistem Kayıtları</p>
+                        <h2 class="mb-0 fw-bold">@ViewBag.LogCount</h2>
+                       
+                    </div>
+                    <div class="stat-icon-wrapper bg-warning text-white shadow-warning">
+                        <i class="fas fa-history"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card custom-card shadow-sm mb-4">
+                <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center border-0">
+                    <h6 class="m-0 font-weight-bold text-dark">Son Eklenen Kampanyalar</h6>
+                    <a href="/Admin/Promotion/CreatePromotion" class="btn btn-primary btn-sm px-3 rounded-pill">+ Yeni</a>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="bg-light">
+                            <tr class="small text-muted text-uppercase">
+                                <th class="ps-4">Görsel</th>
+                                <th>Başlık</th>
+                                <th>Fiyat</th>
+                                <th class="text-center">İşlem</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Take(5))
+                            {
+                                <tr>
+                                    <td class="ps-4">
+                                        <img src="@item.ImageUrl" width="45" height="45" class="rounded shadow-sm" style="object-fit:cover;">
+                                    </td>
+                                    <td class="font-weight-bold text-dark small">@item.Title</td>
+                                    <td><span class="badge badge-soft-success">₺@item.Price.ToString("N2")</span></td>
+                                    <td class="text-center">
+                                        <a href="/Admin/Promotion/UpdatePromotion/@item.Id" class="btn btn-light btn-sm rounded-circle shadow-sm">
+                                            <i class="fas fa-edit text-primary"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="card custom-card shadow-sm mb-4">
+                <div class="card-header bg-white py-3 border-0">
+                    <h6 class="m-0 font-weight-bold text-dark">Öne Çıkan Ürünler</h6>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="bg-light">
+                            <tr class="small text-muted text-uppercase">
+                                <th class="ps-4">Görsel</th>
+                                <th>Ürün Adı</th>
+                                <th class="text-end pe-4">Yönet</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (ViewBag.ProductDashboardList != null)
+                            {
+                                foreach (var prod in ViewBag.ProductDashboardList as List<MyAcademyCQRS.CQRSPattern.Results.ProductResults.GetProductsQueryResult>)
+                                {
+                                    <tr>
+                                        <td class="ps-4" style="width: 70px;">
+                                            <img src="@prod.ImageUrl" width="40" height="40" class="rounded-circle shadow-sm" style="object-fit:cover;">
+                                        </td>
+                                        <td class="font-weight-bold text-secondary small">@prod.Name</td>
+                                        <td class="text-end pe-4">
+                                            <a href="/Admin/Product/Index" class="btn btn-link btn-sm p-0"><i class="fas fa-arrow-right"></i></a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card custom-card shadow-sm mb-4">
+                <div class="card-header bg-white py-3 border-0 d-flex justify-content-between align-items-center">
+                    <h6 class="m-0 font-weight-bold text-dark">Sistem Aktiviteleri</h6>
+                    <span class="badge badge-light text-muted small">Timeline Görünümü</span>
+                </div>
+                <div class="card-body activity-feed" style="max-height: 400px; overflow-y: auto;">
+                    <div class="row">
+                        @if (ViewBag.AppLogs != null)
+                        {
+                            foreach (var log in (ViewBag.AppLogs as List<AppLog>))
+                            {
+                                string moduleClass = log.Module?.ToLower() switch
+                                {
+                                    "promotion" => "mod-promotion",
+                                    "product" => "mod-product",
+                                    "order" => "mod-order",
+                                    "category" => "mod-category",
+                                    "contact" => "mod-contact",
+                                    "system" => "mod-system",
+                                    _ => "mod-default"
+                                };
+
+                                <div class="col-md-12">
+                                    <div class="feed-item">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <span class="module-badge @moduleClass">@log.Module</span>
+                                            <span class="text-muted small" style="font-size: 0.7rem;">
+                                                <i class="far fa-clock me-1"></i>@log.LogDate.ToString("dd.MM.yyyy HH:mm")
+                                            </span>
+                                        </div>
+                                        <p class="text-dark small mb-0 fw-500">@log.Message</p>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                    <div class="text-center mt-2 border-top pt-3">
+                        <a href="/Admin/AppLog/Index" class="btn btn-link btn-sm text-decoration-none font-weight-bold">Tüm Kayıtları Görüntüle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

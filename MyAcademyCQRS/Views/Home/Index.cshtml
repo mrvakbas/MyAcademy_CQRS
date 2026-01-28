@@ -1,0 +1,599 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@await Component.InvokeAsync("_SliderComponentPartial")
+
+@await Component.InvokeAsync("_FeatureSectionComponentPartial")
+
+<section class="ourstory-section sec-pad" style="background-image: url(~/Bagery/assets/images/background/mission-1.jpg);">
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p>Hikayemiz</p>
+            <h2>1970'ten Beri Geleneksel ve <br />Modern Hizmet</h2>
+        </div>
+        <div class="row align-items-center clearfix">
+            <div class="col-lg-4 col-md-6 col-sm-12 content-column">
+                <div id="content_block_1">
+                    <div class="content-box">
+                        <h3>Bagery Hakkında</h3>
+                        <p>1970 yılından bu yana, geleneksel tariflerimizi modern dokunuşlarla birleştiriyoruz. En taze malzemeleri seçerek, her üründe sevgi ve ustalıkla hazırlanan benzersiz lezzetler sunuyoruz. Tutkumuz, her ısırıkta size mutluluk vermektir.</p>
+                        <figure class="signature"><img src="~/Bagery/assets/images/icons/signature-1.png" alt="imza"></figure>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 image-column">
+                <figure class="image-box wow slideInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms"><img src="~/Bagery/assets/images/resource/ice-cream-1.png" alt="dondurma"></figure>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 content-column">
+                <div id="content_block_2">
+                    <div class="content-box">
+                        <h3>Bagery'ye Bakış</h3>
+                        <p>Kalite standartlarımızdan ödün vermeden, müşteri memnuniyetini her zaman ön planda tutuyoruz. El yapımı ürünlerimizle damağınızda iz bırakıyoruz.</p>
+                        <ul class="list clearfix">
+                            <li><i class="icon-Check-mark"></i>%100 Taze ve Doğal Malzemeler</li>
+                            <li><i class="icon-Check-mark"></i>Geleneksel Ustalık Teknikleri</li>
+                            <li><i class="icon-Check-mark"></i>Günlük Üretim ve Taze Sunum</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="more-btn centred">
+            <a href="contact.html" class="theme-btn-one">Bize Ulaşın</a>
+        </div>
+    </div>
+</section>
+
+@await Component.InvokeAsync("_OurStoryComponentPartial")
+
+<section class="service-section sec-pad centred" style="background-image: url(~/Bagery/assets/images/background/service-1.jpg);">
+    <div class="auto-container">
+        <div class="sec-title">
+            <p>Hizmetlerimiz</p>
+            <h2>Hizmetlerimizde <br />Kalite ve Tutku!</h2>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-3 col-md-6 col-sm-12 service-block">
+                <div class="service-block-one">
+                    <div class="inner-box">
+                        <div class="icon-box wow fadeInDown animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="bg-layer" style="background-image: url(~/Bagery/assets/images/icons/icon-bg-3.png);"></div>
+                            <i class="icon-Ice-Cream"></i>
+                        </div>
+                        <div class="lower-content wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <h3><a href="service.html">Külah Dondurmalar</a></h3>
+                            <p>Serinletici ve doğal aromalarla hazırlanmış eşsiz dondurma keyfi.</p>
+                            <div class="btn-box"><a href="service.html">Devamını Oku</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 service-block">
+                <div class="service-block-one">
+                    <div class="inner-box">
+                        <div class="icon-box wow fadeInDown animated animated" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <div class="bg-layer" style="background-image: url(~/Bagery/assets/images/icons/icon-bg-3.png);"></div>
+                            <i class="icon-Bread"></i>
+                        </div>
+                        <div class="lower-content wow fadeInUp animated animated" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <h3><a href="service.html">Taze Ekmek</a></h3>
+                            <p>Her sabah fırından yeni çıkmış, çıtır çıtır ve sıcacık ekmekler.</p>
+                            <div class="btn-box"><a href="service.html">Devamını Oku</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 service-block">
+                <div class="service-block-one">
+                    <div class="inner-box">
+                        <div class="icon-box wow fadeInDown animated animated" data-wow-delay="400ms" data-wow-duration="1500ms">
+                            <div class="bg-layer" style="background-image: url(~/Bagery/assets/images/icons/icon-bg-3.png);"></div>
+                            <i class="icon-Cake"></i>
+                        </div>
+                        <div class="lower-content wow fadeInUp animated animated" data-wow-delay="400ms" data-wow-duration="1500ms">
+                            <h3><a href="service.html">Dilim Pastalar</a></h3>
+                            <p>Özel gün ve tatlı kaçamaklarınız için enfes pasta dilimleri.</p>
+                            <div class="btn-box"><a href="service.html">Devamını Oku</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 service-block">
+                <div class="service-block-one">
+                    <div class="inner-box">
+                        <div class="icon-box wow fadeInDown animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                            <div class="bg-layer" style="background-image: url(~/Bagery/assets/images/icons/icon-bg-3.png);"></div>
+                            <i class="icon-Donuts"></i>
+                        </div>
+                        <div class="lower-content wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                            <h3><a href="service.html">Tatlı Donutlar</a></h3>
+                            <p>Rengarenk süslemeleri ve yumuşacık dokusuyla taze donutlar.</p>
+                            <div class="btn-box"><a href="service.html">Devamını Oku</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="project-section" style="background-image: url(/Bagery/assets/images/background/gallery-1.jpg);">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-12 col-sm-12 content-column">
+                <div class="content-box">
+                    <div class="sec-title">
+                        <p>Fotoğraf Galerisi</p>
+                        <h2>Galerimize Göz Atın</h2>
+                    </div>
+                    <div class="text">
+                        <p>Üretim sürecimizden ve en sevilen ürünlerimizden karelerle mutfağımıza konuk olun.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12 col-sm-12 porject-column">
+                <div class="project-tab">
+                    <div class="tab-btn-box clearfix">
+                        <ul class="project-tab-btns project-btn tab-btns clearfix post-filter pull-right">
+                            <li class="p-tab-btn active-btn" data-tab="#p-tab-1">Dondurma</li>
+                            <li class="p-tab-btn" data-tab="#p-tab-2">Pankekler</li>
+                            <li class="p-tab-btn" data-tab="#p-tab-3">Taze Ekmek</li>
+                            <li class="p-tab-btn" data-tab="#p-tab-4">Muffin</li>
+                        </ul>
+                    </div>
+                    <div class="tabs-content-inner">
+                        <div class="p-tabs-content">
+                            <div class="p-tab active-tab" id="p-tab-1">
+                                <div class="project-carousel owl-carousel owl-theme owl-dots-none nav-style-one">
+                                    <div class="project-block-one">
+                                        <div class="inner-box">
+                                            <figure class="image-box">
+                                                <img src="~/Bagery/assets/images/gallery/project-1.jpg" alt="">
+                                            </figure>
+                                            <div class="lower-content">
+                                                <div class="view-btn"><a href="assets/images/gallery/project-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="icon-Zoom"></i></a></div>
+                                                <h3><a href="index.html">Baking Breads</a></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-block-one">
+                                        <div class="inner-box">
+                                            <figure class="image-box">
+                                                <img src="~/Bagery/assets/images/gallery/project-2.jpg" alt="">
+                                            </figure>
+                                            <div class="lower-content">
+                                                <div class="view-btn"><a href="assets/images/gallery/project-2.jpg" class="lightbox-image" data-fancybox="gallery"><i class="icon-Zoom"></i></a></div>
+                                                <h3><a href="index.html">Baking Breads</a></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-block-one">
+                                        <div class="inner-box">
+                                            <figure class="image-box">
+                                                <img src="~/Bagery/assets/images/gallery/project-3.jpg" alt="">
+                                            </figure>
+                                            <div class="lower-content">
+                                                <div class="view-btn"><a href="assets/images/gallery/project-3.jpg" class="lightbox-image" data-fancybox="gallery"><i class="icon-Zoom"></i></a></div>
+                                                <h3><a href="index.html">Baking Breads</a></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-tab" id="p-tab-2">
+                                <div class="project-carousel owl-carousel owl-theme owl-dots-none nav-style-one">
+                                    <div class="project-block-one">
+                                        <div class="inner-box">
+                                            <figure class="image-box">
+                                                <img src="~/Bagery/assets/images/gallery/project-1.jpg" alt="">
+                                            </figure>
+                                            <div class="lower-content">
+                                                <div class="view-btn"><a href="assets/images/gallery/project-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="icon-Zoom"></i></a></div>
+                                                <h3><a href="index.html">Baking Breads</a></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-block-one">
+                                        <div class="inner-box">
+                                            <figure class="image-box">
+                                                <img src="~/Bagery/assets/images/gallery/project-2.jpg" alt="">
+                                            </figure>
+                                            <div class="lower-content">
+                                                <div class="view-btn"><a href="assets/images/gallery/project-2.jpg" class="lightbox-image" data-fancybox="gallery"><i class="icon-Zoom"></i></a></div>
+                                                <h3><a href="index.html">Baking Breads</a></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-block-one">
+                                        <div class="inner-box">
+                                            <figure class="image-box">
+                                                <img src="~/Bagery/assets/images/gallery/project-3.jpg" alt="">
+                                            </figure>
+                                            <div class="lower-content">
+                                                <div class="view-btn"><a href="assets/images/gallery/project-3.jpg" class="lightbox-image" data-fancybox="gallery"><i class="icon-Zoom"></i></a></div>
+                                                <h3><a href="index.html">Baking Breads</a></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-tab" id="p-tab-3">
+                                <div class="project-carousel owl-carousel owl-theme owl-dots-none nav-style-one">
+                                    <div class="project-block-one">
+                                        <div class="inner-box">
+                                            <figure class="image-box">
+                                                <img src="~/Bagery/assets/images/gallery/project-1.jpg" alt="">
+                                            </figure>
+                                            <div class="lower-content">
+                                                <div class="view-btn"><a href="assets/images/gallery/project-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="icon-Zoom"></i></a></div>
+                                                <h3><a href="index.html">Baking Breads</a></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-block-one">
+                                        <div class="inner-box">
+                                            <figure class="image-box">
+                                                <img src="~/Bagery/assets/images/gallery/project-2.jpg" alt="">
+                                            </figure>
+                                            <div class="lower-content">
+                                                <div class="view-btn"><a href="assets/images/gallery/project-2.jpg" class="lightbox-image" data-fancybox="gallery"><i class="icon-Zoom"></i></a></div>
+                                                <h3><a href="index.html">Baking Breads</a></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-block-one">
+                                        <div class="inner-box">
+                                            <figure class="image-box">
+                                                <img src="~/Bagery/assets/images/gallery/project-3.jpg" alt="">
+                                            </figure>
+                                            <div class="lower-content">
+                                                <div class="view-btn"><a href="assets/images/gallery/project-3.jpg" class="lightbox-image" data-fancybox="gallery"><i class="icon-Zoom"></i></a></div>
+                                                <h3><a href="index.html">Baking Breads</a></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-tab" id="p-tab-4">
+                                <div class="project-carousel owl-carousel owl-theme owl-dots-none nav-style-one">
+                                    <div class="project-block-one">
+                                        <div class="inner-box">
+                                            <figure class="image-box">
+                                                <img src="~/Bagery/assets/images/gallery/project-1.jpg" alt="">
+                                            </figure>
+                                            <div class="lower-content">
+                                                <div class="view-btn"><a href="assets/images/gallery/project-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="icon-Zoom"></i></a></div>
+                                                <h3><a href="index.html">Baking Breads</a></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-block-one">
+                                        <div class="inner-box">
+                                            <figure class="image-box">
+                                                <img src="~/Bagery/assets/images/gallery/project-2.jpg" alt="">
+                                            </figure>
+                                            <div class="lower-content">
+                                                <div class="view-btn"><a href="assets/images/gallery/project-2.jpg" class="lightbox-image" data-fancybox="gallery"><i class="icon-Zoom"></i></a></div>
+                                                <h3><a href="index.html">Baking Breads</a></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-block-one">
+                                        <div class="inner-box">
+                                            <figure class="image-box">
+                                                <img src="~/Bagery/assets/images/gallery/project-3.jpg" alt="">
+                                            </figure>
+                                            <div class="lower-content">
+                                                <div class="view-btn"><a href="assets/images/gallery/project-3.jpg" class="lightbox-image" data-fancybox="gallery"><i class="icon-Zoom"></i></a></div>
+                                                <h3><a href="index.html">Baking Breads</a></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@await Component.InvokeAsync("_PromotionComponentPartial")
+
+<section class="testimonial-section sec-pad" style="background-image: url(~/Bagery/assets/images/background/testimonial-1.jpg);">
+    <figure class="image-layer wow slideInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+        <img src="~/Bagery/assets/images/resource/testimonial-1.png" alt="Müşteri Görseli">
+    </figure>
+    <div class="auto-container">
+        <div class="inner-box">
+            <div class="sec-title">
+                <p>Referanslarımız</p>
+                <h2>Müşterilerimiz Bagery Hakkında <br />Neler Diyor?</h2>
+            </div>
+            <div class="single-item-carousel owl-carousel owl-theme owl-dots-none nav-style-one">
+                <div class="testimonial-block-one">
+                    <div class="icon-box" style="background-image: url(~/Bagery/assets/images/icons/icon-bg-5.png);">
+                        <i class="icon-Quote"></i>
+                    </div>
+                    <div class="text">
+                        <p>Bagery'nin ürünleri her zaman taze ve lezzetli. Özellikle sabahları sıcak çıkan poğaçaları ve özel tasarım pastaları vazgeçilmezimiz oldu. Kaliteli hizmet anlayışınız için teşekkürler.</p>
+                    </div>
+                    <div class="author-info">
+                        <h4>Ayşe Güneş</h4>
+                        <span class="designation">Yazılım Geliştirici</span>
+                    </div>
+                </div>
+                <div class="testimonial-block-one">
+                    <div class="icon-box" style="background-image: url(~/Bagery/assets/images/icons/icon-bg-5.png);">
+                        <i class="icon-Quote"></i>
+                    </div>
+                    <div class="text">
+                        <p>Harika bir atmosfer ve güler yüzlü personel. Şehrin en iyi fırın ürünlerini burada bulabilirsiniz. Herkese tavsiye ediyorum!</p>
+                    </div>
+                    <div class="author-info">
+                        <h4>Ahmet Yılmaz</h4>
+                        <span class="designation">Tasarımcı</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="news-section sec-pad" style="background-image: url(~/Bagery/assets/images/background/news-bg-1.jpg);">
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p>BİZİ TAKİP EDİN</p>
+            <h2>Bagery Haberleri ile <br />Daha Fazlasını Keşfedin</h2>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <span class="category">Fırın</span>
+                            <a href="blog-details.html"><img src="~/Bagery/assets/images/news/news-1.jpg" alt="Haber 1"></a>
+                        </figure>
+                        <div class="lower-content">
+                            <ul class="post-info clearfix">
+                                <li>2 Eylül 2025</li>
+                                <li>/</li>
+                                <li><a href="blog-details.html">Yönetici</a></li>
+                            </ul>
+                            <h3><a href="blog-details.html">Dondurmanın çevre üzerindeki etkileri.</a></h3>
+                            <p>Doğal içeriklerle hazırlanan ürünlerimizin doğaya olan katkısını ve sürdürülebilirlik vizyonumuzu inceleyin.</p>
+                            <div class="btn-box"><a href="blog-details.html" class="theme-btn-two">Devamını Oku</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                <div class="news-block-one wow fadeInUp animated" data-wow-delay="400ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <span class="category">Fırın</span>
+                            <a href="blog-details.html"><img src="~/Bagery/assets/images/news/news-2.jpg" alt="Haber 2"></a>
+                        </figure>
+                        <div class="lower-content">
+                            <ul class="post-info clearfix">
+                                <li>15 Ağustos 2025</li>
+                                <li>/</li>
+                                <li><a href="blog-details.html">Yönetici</a></li>
+                            </ul>
+                            <h3><a href="blog-details.html">Bagery'de başarının sırlarını paylaşıyoruz.</a></h3>
+                            <p>Lezzet dolu yolculuğumuzda bizi biz yapan temel değerlerimizi ve üretim sürecimizi keşfedin.</p>
+                            <div class="btn-box"><a href="blog-details.html" class="theme-btn-two">Devamını Oku</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                <div class="news-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <span class="category">Fırın</span>
+                            <a href="blog-details.html"><img src="~/Bagery/assets/images/news/news-3.jpg" alt="Haber 3"></a>
+                        </figure>
+                        <div class="lower-content">
+                            <ul class="post-info clearfix">
+                                <li>10 Temmuz 2025</li>
+                                <li>/</li>
+                                <li><a href="blog-details.html">Yönetici</a></li>
+                            </ul>
+                            <h3><a href="blog-details.html">İyi yemek sadece enerji almak değildir.</a></h3>
+                            <p>Sağlıklı ve lezzetli beslenmenin ruh halimiz üzerindeki pozitif etkilerini uzmanlarımız anlatıyor.</p>
+                            <div class="btn-box"><a href="blog-details.html" class="theme-btn-two">Devamını Oku</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-section sec-pad" style="background-image: url(~/Bagery/assets/images/background/contact-1.jpg);">
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p>Bize Ulaşın</p>
+            <h2>İletişime Geçin</h2>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-6 col-sm-12 info-column">
+                <div class="contact-info-inner">
+                    <div class="single-box">
+                        <h3>Çalışma Saatleri</h3>
+                        <ul class="list clearfix">
+                            <li>Hergün: 09:30 – 18:00</li>
+                            <li>Pazar & Tatil Günleri: Kapalı</li>
+                        </ul>
+                    </div>
+                    <div class="single-box">
+                        <h3>İletişim Bilgileri</h3>
+                        <ul class="list clearfix">
+                            <li>77408 Satterfield Otoyolu, No: 469 New Antonetta, BC</li>
+                            <li><a href="mailto:info@bagery.com">info@bagery.com</a></li>
+                            <li><a href="tel:902120000000">+90 (212) 000 00 00</a></li>
+                        </ul>
+                    </div>
+                    <div class="single-box">
+                        <h3>Sosyal Medya</h3>
+                        <ul class="social-links clearfix">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            @await Component.InvokeAsync("_ContactComponentPartial")
+        </div>
+    </div>
+</section>
+
+<footer class="main-footer" style="background-image: url(~/Bagery/assets/images/background/footer-1.jpg);">
+    <div class="auto-container">
+        <div class="subscribe-inner clearfix">
+            <div class="text pull-left">
+                <h2>Bültene Abone Olun</h2>
+            </div>
+            <div class="form-inner pull-right">
+                <form action="index.html" method="post" class="subscribe-form">
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="E-posta adresiniz" required="">
+                        <button type="submit" class="theme-btn-one">Abone Ol</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="footer-top">
+            <div class="widget-section">
+                <div class="row clearfix">
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                        <div class="footer-widget logo-widget">
+                            <figure class="footer-logo"><a href="index.html"><img src="~/Bagery/assets/images/footer-logo.png" alt="Logo"></a></figure>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                        <div class="footer-widget contact-widget">
+                            <div class="widget-title">
+                                <h3>İletişim</h3>
+                            </div>
+                            <div class="widget-content">
+                                <ul class="info-list clearfix">
+                                    <li>Reynolds Boynu, Kuzey <br />Helenaville, FV77 8WS</li>
+                                    <li><a href="mailto:hallo@example.com">hallo@example.com</a></li>
+                                    <li><a href="tel:23055873407">+2(305) 587-3407</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
+                        <div class="footer-widget links-widget">
+                            <div class="widget-title">
+                                <h3>Hızlı Bağlantılar</h3>
+                            </div>
+                            <div class="widget-content">
+                                <ul class="links-list clearfix">
+                                    <li><a href="#"><i class="fas fa-angle-right"></i>Tarihçemiz</a></li>
+                                    <li><a href="#"><i class="fas fa-angle-right"></i>Hakkımızda</a></li>
+                                    <li><a href="#"><i class="fas fa-angle-right"></i>Hizmetlerimiz</a></li>
+                                    <li><a href="#"><i class="fas fa-angle-right"></i>Gizlilik Politikası</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+                        <div class="footer-widget shediul-widget">
+                            <div class="border-shape" style="background-image: url(~/Bagery/assets/images/shape/shape-4.png);"></div>
+                            <div class="widget-title">
+                                <h3>Açılış Saatleri</h3>
+                            </div>
+                            <div class="widget-content">
+                                <ul class="shediul-list clearfix">
+                                    <li>Pazartesi: <span>09:00 - 18:00</span></li>
+                                    <li>Salı: <span>09:00 - 18:00</span></li>
+                                    <li>Çarşamba: <span>09:00 - 18:00</span></li>
+                                    <li>Perşembe: <span>09:00 - 18:00</span></li>
+                                    <li>Cuma: <span>09:00 - 18:00</span></li>
+                                    <li>Cmt - Pazar: <span>Kapalı</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="auto-container clearfix">
+            <div class="copyright pull-left">
+                <p><a href="index.html">Bagery</a> &copy; 2026 Tüm Hakları Saklıdır</p>
+            </div>
+            <ul class="footer-nav pull-right">
+                <li><a href="#">Kullanım Şartları</a></li>
+                <li><a href="#">Gizlilik Politikası</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<button class="scroll-top scroll-to-target" data-target="html">
+    <span class="icon-Arrow-Up"></span>
+</button>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 4000,
+            timerProgressBar: true,
+            // --- NÜKLEER TEMİZLİK BAŞLIYOR ---
+            didOpen: (toast) => {
+                // Temanın eklediği tüm 'after' ve 'before' içeriklerini temizle
+                const style = document.createElement('style');
+                style.innerHTML = `
+                    .swal2-popup *::after, .swal2-popup *::before {
+                        content: none !important;
+                        display: none !important;
+                    }
+                    .swal2-html-container { overflow: hidden !important; }
+                `;
+                toast.appendChild(style);
+
+                // Temanın eklediği o siyah dropdown/select benzeri yapıları bul ve gizle
+                const extraElements = toast.querySelectorAll('.dropdown-toggle, [class*="select"]');
+                extraElements.forEach(el => el.style.display = 'none');
+
+                toast.addEventListener('mouseenter', Swal.stopTimer);
+                toast.addEventListener('mouseleave', Swal.resumeTimer);
+            }
+        });
+
+        // Hata Mesajı
+        var errorMessage = "@Html.Raw(TempData["ErrorMessage"])";
+        if (errorMessage && errorMessage.trim() !== "") {
+            Toast.fire({
+                icon: 'error',
+                title: errorMessage
+            });
+        }
+
+        // Başarı Mesajı
+        var successMessage = "@Html.Raw(TempData["SuccessMessage"])";
+        if (successMessage && successMessage.trim() !== "") {
+            Toast.fire({
+                icon: 'success',
+                title: successMessage
+            });
+        }
+    });
+</script>
